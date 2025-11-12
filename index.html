@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <h1>Hello GitHub Pages!</h1>
-<script>
-  var random = Math.random();
-  console.log(random)
-</script>
+  <h1 id="rand"></h1>
 
-  
+  <script>
+    var random = Math.random();
+    document.getElementById("rand").textContent = "あなたの数字は " + random + " です。";
+  </script>
 </body>
 </html>
