@@ -16,9 +16,36 @@
   <input type="text" id ="numberinput" placeholder = "数字を入力してください"><br>
   <label for ="BET"> BET金額を30まで入力してください :  </label>
   <input type="text" id ="BET" placeholder = "金額を入力してください">
-  <button>BET!</button><br>
+  <button id = "betbutton">BET!</button><br>
   <label for = "money"> 現在の所持金額: </label>
-  <span id = "moneyvalue">300</span>
+  <span id = "moneyvalue">400</span>
+
+<script>
+  document.getElementById("betbutton").addEventListener("click", function () {
+  
+    const num = document.getElementById("numberinput").value;
+    const bet = document.getElementById("BET").value;
+
+    // 入力値を整数に変換
+    const numInt = parseInt(num, 10);
+    const betInt = parseInt(bet, 10);
+
+    // ① 1〜100の整数チェック
+    if (isNaN(numInt) || numInt < 1 || numInt > 100) {
+      alert("1〜100の整数を入力してください。");
+      return; // 処理中断
+    }
+
+    // ② BET金額 1〜30 の整数チェック
+    if (isNaN(betInt) || betInt < 1 || betInt > 30) {
+      alert("BET金額は 1〜30 の整数で入力してください。");
+      return;
+    }
+
+    // ここまで来たら正常入力
+    alert("入力OKです。次の処理へ進みます！");
+  });
+</script>
   
 </body>
 </html>
